@@ -37,14 +37,51 @@ header nav{
     float: right;
 
 }
-header nav ul{
+nav.mobile-menu{
+    cursor: pointer;
+    display: none;
+    width: 32px;
+    height:32px;
+    background-image: url('./imagens/menu-aberto.png');
+    background-size: 100% 100%;
+}
+nav.mobile-menu:hover ul{
+    opacity: 1;
+}
+nav.mobile-menu ul{
+    opacity: 0;
+    transition: 1s;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 80px;
+    list-style-type: none;
+    text-align: center;
+}
+nav.mobile-menu ul li{
+    padding: 8px 0;
+    border-bottom: 1px solid purple;
+}
+nav.mobile-menu ul li:hover{
+    background-color: purple;
+    transition: 1s;
+}
+nav.mobile-menu ul li a:hover{
+    color: white;
+}
+nav.mobile-menu ul li a{
+    color: purple;
+    text-decoration: none;
+}
+header nav.desktop-menu ul{
     list-style-type: none;
 }
-header nav li{
+header nav.desktop-menu li{
     float: left;
     padding: 0 20px;
 }
-header li a {
+header nav.desktop-menu li a {
     text-decoration: none;
     color: white;
 }
@@ -71,28 +108,33 @@ section.sessao1 .container{
 section.sessao1{
     width:100%;
     background-color: rgb(87, 31, 87);
-    padding: 20px 2%;
+    padding: 0 2%;
+    height: 400px;
 }
 .texto-sessao1{
     float: left;
     color: white;
     width: 50%;
+    margin-top: 60px;
+    padding-left: 80px;
 }
 .texto-sessao1 h2{
     font-weight: 300;
+    font-size: 26px;
 }
 .texto-sessao1 p{
-    font-size: 13px;
+    font-size: 15px;
     margin-top: 20px;
     
 }
 .texto-sessao1 ul{
-    font-size: 13px;
+    font-size: 15px;
     list-style-position: inside;
 }
 .texto-sessao1 ul li{
     float: left;
     width: 100%;
+    margin-top: 8px;
 }
 .btn1-texto{
     background-color: orange;
@@ -100,7 +142,8 @@ section.sessao1{
     height: 44px;
     color: white;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 30px;
+    font-size: 13px;
     text-align: center;
     line-height: 44px;
     border-radius: 30px;
@@ -108,10 +151,101 @@ section.sessao1{
 }
 .device-sessao1{
     float: left;
-    width:50%;
-    height: 300px;
+    width: 50%;
+    height: 450px;
+    position: relative;
+    top: -50px;
     background-image: url("./imagens/transferir.png");
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: 100%;
+
+}
+.sessao2 .container{
+    max-width: 1000px;
+}
+.sessao2{
+    padding: 0 2%;
+    background-color: white;
+    text-align: center;
+}
+.sessao2 h2{
+    color: #472663;
+    font-weight: 300;
+}
+.sessao2 p{
+    margin-top: 30px;
+    max-width: 900px;
+    display: inline-block;
+}
+.sessao2 img{
+    width: 100%;
+    margin-top: 40px;
+}
+@media screen and (max-width: 830px){
+    .chamada1{
+        max-width: none;
+        width: 100%;
+        float: none;
+        margin: 170px 0;
+    
+    }
+    .chamada1 h2{
+        font-weight: 300;
+        font-size: 30px;
+        padding: 0 10px;
+        color: white;
+    }
+    
+    .chamada1 p{
+        font-size: 15px;
+        color: white;
+        margin-top: 10px;
+    }
+
+}
+@media screen and (max-width: 768px){
+    header{
+        width: 100%;
+        height: auto;
+        min-height: 90vh;
+        padding: 40px 2%;
+    }
+    nav.desktop-menu{
+        display: none;
+    }
+    nav.mobile-menu{
+        display:block;
+    }
+    
+    section.sessao1{
+        padding: 40px 2%;
+        height: auto;
+        text-align: center;
+    }
+    .texto-sessao1{
+        width: 100%;
+        margin-top: 0;
+        padding-left: 0;
+        position: static;
+        float: none;
+        display: inline-block;
+    }
+    .texto-sessao1 ul{
+        display: inline-block;
+        margin-top: 20px;
+    }
+    .texto-sessao1 ul li {
+        float: none;
+        text-align: left;
+    }
+    .btn1-texto{
+        display: inline-block;
+    }
+    .device-sessao1{
+        display: none;
+    }
+    .sessao2{
+        padding: 40px 2%;
+    }
 
 }
